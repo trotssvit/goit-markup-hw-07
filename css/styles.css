@@ -78,6 +78,11 @@ button {
   padding-bottom: 23.5px;
   border: 1px navy;
 }
+@media screen and (min-width: 768px) {
+  .header-nav {
+    padding: 0;
+  }
+}
 .logo {
   font-family: 'Raleway';
   font-weight: 800;
@@ -193,6 +198,14 @@ button {
   padding-top: 24px;
   padding-bottom: 24px;
 }
+@media screen and (min-width: 768px) {
+  .header-address {
+    font-size: 12px;
+    line-height: 1.7;
+      letter-spacing: 0.04em;
+
+}
+
 .header-address + .header-address {
   margin-left: 40px;
 }
@@ -321,6 +334,9 @@ button {
   .mobile-menu-open {
     display: none;
   }
+  .menu-mobile {
+    display: none;
+  }
 }
 .container.header-nav {
   display: flex;
@@ -345,6 +361,14 @@ button {
   height: 432px;
   width: 100%;
 }
+@media screen and (min-width: 768px) {
+  .hero-content {
+    padding: 112px 136px 112px 136px;
+    height: 436px;
+    width: 100%;
+  }
+}
+
 .hero {
   background: var(--hero-bgcolor);
   text-align: center;
@@ -361,7 +385,15 @@ button {
   margin-left: auto;
   margin-right: auto;
 }
-
+@media screen and (min-width: 768px) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-tablet.jpg);
+  }
+}
 .hero-text {
   font-weight: 700;
   font-size: 36px;
@@ -371,6 +403,15 @@ button {
   text-align: center;
   margin-bottom: 72px;
 }
+@media screen and (min-width: 768px) {
+  .hero-text {
+    font-size: 56px;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    margin-bottom: 36px;
+  }
+}
+
 .hero-btn {
   padding: 16px 32px;
   background: var(--primary-brand);
@@ -628,13 +669,31 @@ button {
   letter-spacing: 0.02em;
   color: var(--normal-text);
 }
+.goals-list-item + .goals-list-item {
+  margin-top: 72px;
+}
+
 .goals-list {
   display: block;
   padding-top: 96px;
   padding-bottom: 96px;
 }
-.goals-list-item + .goals-list-item {
-  margin-top: 72px;
+@media screen and (min-width: 768px) {
+  .goals-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 72px;
+  }
+  .goals-list-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+  .goals-list-item + .goals-list-item {
+    margin: 0;
+  }
+  .goals-caption {
+    text-align: left;
+  }
 }
 /*---------------------------------------Our team------------------------------------*/
 .team {
