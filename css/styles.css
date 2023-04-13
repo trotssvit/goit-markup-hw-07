@@ -71,6 +71,11 @@ button {
   padding: 0;
 }
 /* -------------- Header---------------------- */
+.header-area {
+  border-bottom: 1px solid var(--border-work-item);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
 .container.header-nav {
   display: flex;
   align-items: center;
@@ -79,7 +84,6 @@ button {
 .header-nav {
   display: flex;
   align-items: center;
-  border: 1px, var(--border-work-item);
 }
 .logo {
   font-family: 'Raleway';
@@ -179,22 +183,15 @@ button {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.header-address {
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--normal-text);
-
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
 @media screen and (min-width: 768px) {
   .header-address {
+    text-decoration: none;
+    font-weight: 400;
+
     font-size: 12px;
     line-height: 1.7;
     letter-spacing: 0.04em;
+    color: var(--normal-text);
   }
 }
 .header-address + .header-address {
@@ -218,6 +215,14 @@ button {
   .header-contakts-list + .header-contakts-list {
     margin-left: 40px;
   }
+  .header-address {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
 }
 
 /* -----------------Mobile Menu------------------------ */
@@ -236,7 +241,7 @@ button {
   width: 100%;
   height: 100%;
 
-  transition-duration: 450ms;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   opacity: 0;
@@ -355,7 +360,8 @@ button {
     display: none;
   }
 }
-.mob-site-nav__link.current {
+.mob-site-nav__link.current,
+.portfolio-btn.current {
   color: var(--hover-btn);
   opacity: 1;
 }
@@ -775,6 +781,29 @@ button {
     margin-left: 24px;
   }
 }
+/*----------------------------------What we`re doing----------------------------*/
+.work-text {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: var(--dark-text);
+}
+.work-list {
+  display: flex;
+  margin-top: 72px;
+  margin-bottom: 120px;
+}
+.work-items + .work-items {
+  margin-left: 24px;
+}
+@media screen and (max-width: 1199px) {
+  .work-section {
+    display: none;
+  }
+}
 /*---------------------------------------Our team------------------------------------*/
 .team-section {
   background-color: var(--logo-footer);
@@ -805,22 +834,6 @@ button {
   margin-left: auto;
 }
 
-@media screen and (min-width: 768px) {
-  .team-list {
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 64px;
-    column-gap: 24px;
-    justify-content: center;
-  }
-  .team-item {
-    flex-basis: calc((100% - 24px) / 2);
-    margin: 0;
-  }
-  .team-item + .team-item {
-    margin: 0;
-  }
-}
 .team-data {
   background-color: var(--main-bg-color);
   text-align: center;
@@ -886,6 +899,35 @@ button {
 
 .team-link-items + .team-link-items {
   margin-left: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .team-list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 64px;
+    column-gap: 24px;
+    justify-content: center;
+  }
+  .team-item {
+    flex-basis: calc((100% - 24px) / 2);
+    margin: 0;
+  }
+  .team-item + .team-item {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .team-section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  .team-item + .team-item {
+    margin-top: 0;
+  }
+  .team-item {
+    flex-basis: calc((100% - 72px) / 4);
+  }
 }
 /*-------------------------------------------------Customers---------------------------------*/
 .customers {
@@ -966,11 +1008,18 @@ button {
     row-gap: 72px;
     column-gap: 24px;
   }
-  /* .customers-list {
-    flex-basis: calc((100% - 48px) / 3);
-  } */
   .customers-a {
     width: 168px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .customers {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  .customer-list {
+    flex-wrap: nowrap;
+    justify-content: center;
   }
 }
 /*---------------------Footer------------------------------------------------*/
@@ -981,7 +1030,8 @@ button {
   padding-bottom: 96px;
 }
 .mobile-footer-box {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .footer-text {
   font-weight: 400;
@@ -992,14 +1042,17 @@ button {
 }
 .footer-box {
   width: 264px;
-  height: 112px;
+  /* height: 112px; */
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 72px;
 }
 .logo.footer-logo {
-  text-align: center;
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
 }
+
 .footer-logo > span {
   color: var(--logo-footer);
   margin-bottom: 16px;
@@ -1086,6 +1139,24 @@ button {
     text-align: left;
   }
 }
+@media screen and (min-width: 1200px) {
+  .footer-space {
+    max-height: 312px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .footer-container {
+    /* display: flex; */
+    flex-wrap: nowrap;
+    column-gap: 0;
+    row-gap: 0;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 16px;
+    justify-content: space-between;
+  }
+}
 /* -------------------------------------------Mailing----------------------------------------- */
 
 .mailing-text {
@@ -1113,6 +1184,8 @@ button {
   padding-left: 24px;
   font: inherit;
   border: 1px solid var(--main-bg-color);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+
   background-color: var(--footer-bg-color);
   color: var(--main-bg-color);
   margin-left: auto;
@@ -1133,6 +1206,7 @@ button {
   letter-spacing: 0.04em;
 
   color: var(--main-bg-color);
+  opacity: 0.6;
 
   position: absolute;
   top: 50%;
@@ -1222,4 +1296,127 @@ button {
   .mob-button-submit {
     margin-left: 24px;
   }
+}
+
+/*-------------------------------------Portfolio ----------------------------------*/
+.portfolio-area {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+.portfolio-btns {
+  display: flex;
+  justify-content: center;
+}
+.portfolio-btn-list + .portfolio-btn-list {
+  margin-left: 24px;
+}
+.portfolio-btn {
+  border: 1px solid var(--border-work-item);
+  background: var(--logo-footer);
+  border-radius: 4px;
+  padding: 12px 24px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: var(--primary-brand);
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-btn:hover,
+.portfolio-btn:focus,
+.portfolio-btn.current {
+  background-color: #404bbf;
+  color: var(--main-bg-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/*-------------------------------------Portfolio Cards ----------------------------------*/
+.portfolio-area .portfilio-cards {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-top: -48px;
+  margin-left: -24px;
+  margin-bottom: 120px;
+}
+.portfilio-cards > .card-item {
+  flex-basis: calc(100% / 3 - 24px);
+  outline: 1px solid var(--border-work-item);
+
+  margin-top: 48px;
+  margin-left: 24px;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfilio-cards .card-item:hover {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-text {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--dark-text);
+
+  padding-top: 32px;
+  margin-bottom: 8px;
+  margin-left: 16px;
+}
+.portfolio-group {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--normal-text);
+
+  margin-left: 16px;
+  padding-bottom: 32px;
+}
+/* -----------------------------------Cards overlay------------------------------------------- */
+.overlay {
+  position: absolute;
+  background-color: var(--primary-brand);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--logo-footer);
+  padding-top: 40px;
+  padding-right: 32px;
+  padding-bottom: 40px;
+  padding-left: 32px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translate(0, 100%);
+  transition: transform 500ms linear;
+}
+.profile-card {
+  display: block;
+  text-decoration: none;
+}
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+
+  width: 360px;
+  height: 300px;
+}
+.card-item:hover .overlay {
+  transform: translateY(0);
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
