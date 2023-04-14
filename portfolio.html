@@ -557,11 +557,13 @@
             </ul>
         </div>
     </main>
-    <footer class="">
-        <div class="footer-space">
-            <div class="container ">
+    <footer>
+        <div class="footer-space ">
+            <div class="container footer-container">
                 <div class="footer-box">
-                    <a href="" class="logo footer-logo">Web<span>Studio</span> </a>
+                    <div class="mobile-footer-box">
+                        <a href="" class="logo footer-logo">Web<span>Studio</span> </a>
+                    </div>
                     <p class="footer-text">Increase the flow of customers and sales for your business with digital
                         marketing
                         &
@@ -605,15 +607,18 @@
                     <p lang="en" class="mailing-text">Subscribe</p>
                     <form class="form">
                         <div class="form-field">
-                            <input class="input-email" type="email" name="email" id="email" placeholder=" ">
+                            <input class="input-email" type="email" name="customer-email" id="email" placeholder=" ">
                             <label class="email" for="email">E-mail </label>
                         </div>
-                        <button class="button-submit" type="submit">
-                            Subscribe
-                            <svg class="icon-submit" width="24" height="24">
-                                <use href="./images/symbol-defs.svg#icon-plane"></use>
-                            </svg>
-                        </button>
+                        <div class="mob-button-submit">
+                            <button class="button-submit" type="submit">
+                                Subscribe
+                                <svg class="icon-submit" width="24" height="20">
+                                    <use href="./images/symbol-defs.svg#icon-send"></use>
+                                </svg>
+                            </button>
+                        </div>
+
                     </form>
                 </div>
 
